@@ -1,0 +1,32 @@
+@use 'variables' as v;
+//los mixins son similares a las funciones de JS se pueden usar multiples veces
+
+//mixins media query
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content; //tomara lineas de codigo independiente al numero que sea
+    }
+}
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content; //tomara lineas de codigo independiente al numero que sea
+    }
+}
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content; //tomara lineas de codigo independiente al numero que sea
+    }
+}
+
+@mixin desktopXL {
+    @media (min-width: v.$desktopXL) {
+        @content; //tomara lineas de codigo independiente al numero que sea
+    }
+}
+
+//mixin grid
+@mixin grid($columnas, $espaciado) {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $espaciado;
+}
