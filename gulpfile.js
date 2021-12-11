@@ -53,7 +53,7 @@ function versionAvif(done) {
     const opciones = {
         quality: 50,
     };
-    src('src/img/**/*.{png,jpg}') //Para convertir todas las imagenes y las extensiones deben separadas por "," pero sin espacio
+    src('src/img/**/*.{png,jpg}') //Para convertir todas las imagenes y las extensiones deben separadas por una "," pero sin espacio
         .pipe(avif(opciones)) //Calidad de la imagen
         .pipe(dest('build/img')); //Almacenarlo en el disco duro
     done();
