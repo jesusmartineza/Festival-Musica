@@ -3,6 +3,13 @@
 
 .header {
     background-color: v.$verde;
+    @include m.tablet {
+        &.fijo {
+            position: fixed;
+            width: 100%;
+            box-shadow: 0.1rem 0.2rem 0.3rem v.$negro;
+        }
+    }
     h1 {
         color: v.$blanco;
         text-align: center;
@@ -13,6 +20,8 @@
     .contenido-header {
         padding: 2rem;
         @include m.tablet {
+            left: 0;
+            top: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;

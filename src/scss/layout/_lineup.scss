@@ -1,0 +1,85 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.lineup {
+    background-color: v.$rosa;
+    padding: 5rem 0;
+
+    h3,
+    p {
+        text-align: center;
+        color: v.$blanco;
+    }
+
+    .dia {
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 5rem 0;
+    }
+}
+
+h3 {
+    font-size: 5rem;
+}
+
+.escenarios-contenedor {
+    @include m.tablet {
+        @include m.grid(2, 5rem);
+    }
+
+    p {
+        color: v.$negro;
+    }
+}
+.escenario {
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+
+    .nombre-escenario {
+        &:after {
+            content: '';
+            display: block;
+            width: 20rem;
+            height: 10rem;
+            background-size: 15rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 2rem auto 0 auto;
+        }
+    }
+}
+
+.edm .nombre-escenario:after {
+    background-image: url(../img/icono_edm.png); //Debemos saber donde se va a compilar y estar consientes de la ruta correcta como si estuvieramos saliendo de la carpeta css e ingresando a la de img(../img/imagen) no usar la ruta donde estan los archivos de sass.
+}
+.rock .nombre-escenario:after {
+    background-image: url(../img/icono_rock.png);
+}
+
+.calendario {
+    @include m.resetear-lista;
+
+    li {
+        padding: 2.5rem;
+        font-weight: 700;
+        span {
+            font-weight: 400;
+        }
+    }
+}
+
+.bg-amarillo {
+    background-color: v.$amarillo;
+    //:nth-child nos ayuda a seleccionar a los hijos de un selector y (odd) selecciona a todos los elementos impares
+    li:nth-child(odd) {
+        background-color: darken(v.$amarillo, 15%);
+        //darken es propio de sass y (color y porcentaje) se elije un color y el porcentaje a obscurecer el color
+    }
+}
+
+.bg-verde {
+    background-color: v.$verde;
+    li:nth-child(odd) {
+        background-color: darken(v.$verde, 15%);
+    }
+}
