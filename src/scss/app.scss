@@ -1,9 +1,0 @@
-//Forma de traer las variables o estilos de una hoja de scss a otra (esta es la forma mas comun y antigua ya hay otra forma de hacer lo mismo)
-
-//Forma antigua
-// @import 'base/variables';
-// @import 'contenido/contenido';
-
-//Forma moderna
-@use 'base';
-@use 'layout';
